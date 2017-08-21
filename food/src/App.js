@@ -3,11 +3,43 @@ import logo from "./logo.svg";
 import "./App.css";
 import Nav from "./nav.js";
 
+const menu = [drinks, food, dessert];
+const drinks = [
+  {
+    name: "Whisky",
+    price: "$101"
+  },
+  {
+    name: "Scotch",
+    price: "$3"
+  },
+  {
+    name: "Burbon",
+    price: "$12"
+  },
+  {
+    name: "Empty Mason Jar",
+    price: "$.75"
+  }
+];
+
 const menu = {
   drinks: [
     {
       name: "Whisky",
       price: "$101"
+    },
+    {
+      name: "Scotch",
+      price: "$3"
+    },
+    {
+      name: "Burbon",
+      price: "$12"
+    },
+    {
+      name: "Empty Mason Jar",
+      price: "$.75"
     }
   ],
   food: [
@@ -42,21 +74,16 @@ class App extends Component {
     );
   }
 }
+Object.keys(menu).map(key =>
+  console.log("key is = ", key, " menu[key] = ", menu[key])
+);
 //menu: sections / sections are made of items ?
 //menu section
 //menu items
-const menuSection = ({ section }) => {
-  const poopOutItems = section.map(item => <MenuItem item />);
 
-  return (
-    <div className="container">
-      {poopOutItems}
-    </div>
-  );
-};
 const MenuItem = ({ item }) => {
   return (
-    <div className="MenuItem well">
+    <div className="MenuItem">
       <p>
         {item.name}
       </p>
@@ -67,21 +94,38 @@ const MenuItem = ({ item }) => {
   );
 };
 
-let makeSections = () => {
-  let sections = [];
-  for (let item in menu) {
-    sections.push(<MenuItem key={item} item={item} />);
-  }
-  console.log("sections = ", sections);
-  return sections;
+// let makeSections = () => {
+//   let sections = [];
+//   for (let item in menu) {
+//     sections.push(<MenuItem key={item} item={item} />);
+//   }
+//   console.log("sections = ", sections);
+//   return sections;
+// };
+const MenuSection = ({ items, name }) => {
+  return (
+    <div className="container well">
+      <h2>
+        {name}
+      </h2>
+      {items.map(item => <MenuItem item={item} key={item.name} />)}
+    </div>
+  );
 };
 class Menu extends Component {
   render() {
     return (
       <div className="menu">
-        <h2>"this is the menu"</h2>
+        <h2>Menu</h2>
         <div className="sections">
-          {makeSections()}
+          {Object.keys(menu).map(function(key) {
+            return (
+              <MenuSection
+                items={{ items: menu[key], name: "drink" }}
+                key={key}
+              />
+            );
+          })}
         </div>
       </div>
     );
