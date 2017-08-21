@@ -7,19 +7,19 @@ const menu = {
   drinks: [
     {
       name: "Whisky",
-      price: "$100"
+      price: "$101"
     }
   ],
   food: [
     {
       name: "WhiskyBread",
-      price: "$100"
+      price: "$102"
     }
   ],
   dessert: [
     {
       name: "Whisky Ice Cream",
-      price: "$100"
+      price: "$103"
     }
   ]
 };
@@ -54,23 +54,23 @@ const menuSection = ({ section }) => {
     </div>
   );
 };
-const MenuItem = ({ menuItem }) => {
-  const { name, price } = menuItem;
+const MenuItem = ({ item }) => {
   return (
     <div className="MenuItem well">
       <p>
-        {name}
+        {item.name}
       </p>
       <p>
-        {price}
+        {item.price}
       </p>
     </div>
   );
 };
+
 let makeSections = () => {
   let sections = [];
-  for (let key in menu) {
-    sections.push(<MenuItem key />);
+  for (let item in menu) {
+    sections.push(<MenuItem key={item} item={item} />);
   }
   console.log("sections = ", sections);
   return sections;
@@ -78,7 +78,7 @@ let makeSections = () => {
 class Menu extends Component {
   render() {
     return (
-      <div id="menu" className="menu">
+      <div className="menu">
         <h2>"this is the menu"</h2>
         <div className="sections">
           {makeSections()}
@@ -90,7 +90,7 @@ class Menu extends Component {
 class Directions extends Component {
   render() {
     return (
-      <div id="directions" className="directions">
+      <div className="directions">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h2>"this is the menu"</h2>
@@ -104,7 +104,7 @@ class Directions extends Component {
 class Pricing extends Component {
   render() {
     return (
-      <div id="pricing" className="pricing">
+      <div className="pricing">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h2>"this is the menu"</h2>
