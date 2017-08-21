@@ -8,7 +8,7 @@ const Nav = ({ links }) => {
     <nav className="navbar navbar-inverse myNav">
       <div className="container-fluid">
         <div className="navbar-header" />
-        <a className="navbar-brand" href="#">
+        <a className="navbar-brand" href="#home">
           Restaurant
         </a>
         <ul className="nav navbar-nav">

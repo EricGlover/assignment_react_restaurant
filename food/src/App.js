@@ -66,7 +66,7 @@ class App extends Component {
     return (
       <div className="App">
         <Nav />
-        <div className="page-header">
+        <div className="page-header" id="home">
           <h1>
             Restaurant of Westeros <small>A Game of tables</small>
           </h1>
