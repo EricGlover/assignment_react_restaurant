@@ -3,57 +3,62 @@ import logo from "./logo.svg";
 import "./App.css";
 import Nav from "./nav.js";
 
-const menu = [drinks, food, dessert];
-const drinks = [
-  {
-    name: "Whisky",
-    price: "$101"
-  },
-  {
-    name: "Scotch",
-    price: "$3"
-  },
-  {
-    name: "Burbon",
-    price: "$12"
-  },
-  {
-    name: "Empty Mason Jar",
-    price: "$.75"
-  }
-];
-
 const menu = {
-  drinks: [
-    {
-      name: "Whisky",
-      price: "$101"
-    },
-    {
-      name: "Scotch",
-      price: "$3"
-    },
-    {
-      name: "Burbon",
-      price: "$12"
-    },
-    {
-      name: "Empty Mason Jar",
-      price: "$.75"
-    }
-  ],
-  food: [
-    {
-      name: "WhiskyBread",
-      price: "$102"
-    }
-  ],
-  dessert: [
-    {
-      name: "Whisky Ice Cream",
-      price: "$103"
-    }
-  ]
+  drinks: {
+    name: "Drinks",
+    items: [
+      {
+        name: "Whisky",
+        price: "$101"
+      },
+      {
+        name: "Scotch",
+        price: "$3"
+      },
+      {
+        name: "Burbon",
+        price: "$12"
+      },
+      {
+        name: "Empty Mason Jar",
+        price: "$.75"
+      }
+    ]
+  },
+  food: {
+    name: "Food",
+    items: [
+      {
+        name: "Whisky Bread",
+        price: "$102"
+      },
+      {
+        name: "Scotch Bread",
+        price: "$102"
+      },
+      {
+        name: "Burbon Bread",
+        price: "$102"
+      }
+    ]
+  },
+  dessert: {
+    name: "Dessert",
+    items: [
+      {
+        name: "Whisky Ice Cream",
+        price: "$103"
+      },
+      {
+        name: "Gin Ice Cream",
+        price: "$103"
+      },
+      {
+        name: "Scotch Ice Cream",
+        price: "$103"
+      }
+    ]
+  }
 };
 
 class App extends Component {
@@ -61,12 +66,12 @@ class App extends Component {
     return (
       <div className="App">
         <Nav />
+        <Jumbotron />
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to React</h2>
         </div>
 
-        <p className="App-intro">Things here</p>
         <Menu />
         <Directions />
         <Pricing />
@@ -74,9 +79,6 @@ class App extends Component {
     );
   }
 }
-Object.keys(menu).map(key =>
-  console.log("key is = ", key, " menu[key] = ", menu[key])
-);
 //menu: sections / sections are made of items ?
 //menu section
 //menu items
@@ -94,14 +96,6 @@ const MenuItem = ({ item }) => {
   );
 };
 
-// let makeSections = () => {
-//   let sections = [];
-//   for (let item in menu) {
-//     sections.push(<MenuItem key={item} item={item} />);
-//   }
-//   console.log("sections = ", sections);
-//   return sections;
-// };
 const MenuSection = ({ items, name }) => {
   return (
     <div className="container well">
@@ -114,18 +108,20 @@ const MenuSection = ({ items, name }) => {
 };
 class Menu extends Component {
   render() {
+    let sections = Object.keys(menu).map(section => {
+      return (
+        <MenuSection
+          items={menu[section].items}
+          name={menu[section].name}
+          key={menu[section].name}
+        />
+      );
+    });
     return (
       <div className="menu">
         <h2>Menu</h2>
         <div className="sections">
-          {Object.keys(menu).map(function(key) {
-            return (
-              <MenuSection
-                items={{ items: menu[key], name: "drink" }}
-                key={key}
-              />
-            );
-          })}
+          {sections}
         </div>
       </div>
     );
