@@ -66,6 +66,11 @@ class App extends Component {
     return (
       <div className="App">
         <Nav />
+        <div className="page-header">
+          <h1>
+            Restaurant of Westeros <small>A Game of tables</small>
+          </h1>
+        </div>
 
         <div>
           <img src={require("./mapofwesteros.jpg")} />
@@ -120,7 +125,7 @@ class Menu extends Component {
     });
     return (
       <div className="menu">
-        <h2>Menu</h2>
+        <h1>Menu</h1>
         <div className="sections">
           {sections}
         </div>
@@ -132,7 +137,8 @@ class Directions extends Component {
   render() {
     return (
       <div id="directions" className="directions">
-        <h1>follow the yellow brick road</h1>
+        <h3>Directions</h3>
+        <h4>follow the yellow brick road</h4>
       </div>
     );
   }
@@ -142,11 +148,13 @@ class Pricing extends Component {
   render() {
     return (
       <div id="pricing" className="directions">
-        <h1>Dolla Dolla bills yall </h1>
-        <h1>Not hiding anything </h1>
-        <h1>hiding</h1>
-        <h1>anything </h1>
-        <h1>right? </h1>
+        <h3>Pricing</h3>
+        <br />
+        <h4>Dolla Dolla bills yall </h4>
+        <h4>Not hiding anything </h4>
+        <h4>hiding</h4>
+        <h4>anything </h4>
+        <h4>right? </h4>
       </div>
     );
   }
