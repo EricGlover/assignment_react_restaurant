@@ -10,16 +10,16 @@ const Nav = ({ links }) => {
         Restaurant
       </a>
       <div className="navbar-nav">
-        <a className="nav-item nav-link active" href="#">
+        <a className="nav-item nav-link active" href="#home">
           Home <span className="sr-only">(current)</span>
         </a>
-        <a className="nav-item nav-link" href="#">
+        <a className="nav-item nav-link" href="#menu">
           Menu
         </a>
-        <a className="nav-item nav-link" href="#">
+        <a className="nav-item nav-link" href="#reservations">
           Reservations
         </a>
-        <a className="nav-item nav-link" href="#">
+        <a className="nav-item nav-link" href="#directions">
           Directions
         </a>
       </div>

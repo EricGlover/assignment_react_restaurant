@@ -1,0 +1,19 @@
+{
+  "name": "assignment_react_restaurant",
+  "version": "1.0.0",
+  "description": "Name: Eric & Dan",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KaraThrash/assignment_react_restaurant.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KaraThrash/assignment_react_restaurant/issues"
+  },
+  "homepage": "https://github.com/KaraThrash/assignment_react_restaurant#readme"
+}
