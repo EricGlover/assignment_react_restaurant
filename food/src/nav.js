@@ -13,8 +13,11 @@ const Nav = ({ links }) => {
         <a className="nav-item nav-link active" href="#home">
           Home <span className="sr-only">(current)</span>
         </a>
-        <a className="nav-item nav-link" href="#menu">
-          Menu
+        <a className="nav-item nav-link" href="#Drinks">
+          Drinks
+        </a>
+        <a className="nav-item nav-link" href="#Food">
+          Food
         </a>
         <a className="nav-item nav-link" href="#reservations">
           Reservations

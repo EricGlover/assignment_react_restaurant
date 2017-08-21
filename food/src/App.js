@@ -66,19 +66,20 @@ class App extends Component {
     return (
       <div className="App">
         <Nav />
-        <Jumbotron />
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+
+        <div>
+          <img src={require("./mapofwesteros.jpg")} />
         </div>
 
         <Menu />
         <Directions />
         <Pricing />
+        <Reservations />
       </div>
     );
   }
 }
+
 //menu: sections / sections are made of items ?
 //menu section
 //menu items
@@ -99,7 +100,7 @@ const MenuItem = ({ item }) => {
 const MenuSection = ({ items, name }) => {
   return (
     <div className="container well">
-      <h2>
+      <h2 id={name}>
         {name}
       </h2>
       {items.map(item => <MenuItem item={item} key={item.name} />)}
@@ -130,27 +131,31 @@ class Menu extends Component {
 class Directions extends Component {
   render() {
     return (
-      <div className="directions">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>"this is the menu"</h2>
-        </div>
-
-        <p className="App-intro">"menu stuff here"</p>
+      <div id="directions" className="directions">
+        <h1>follow the yellow brick road</h1>
       </div>
     );
   }
 }
+
 class Pricing extends Component {
   render() {
     return (
-      <div className="pricing">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>"this is the menu"</h2>
-        </div>
-
-        <p className="App-intro">"menu stuff here"</p>
+      <div id="pricing" className="directions">
+        <h1>Dolla Dolla bills yall </h1>
+        <h1>Not hiding anything </h1>
+        <h1>hiding</h1>
+        <h1>anything </h1>
+        <h1>right? </h1>
+      </div>
+    );
+  }
+}
+class Reservations extends Component {
+  render() {
+    return (
+      <div id="reservations">
+        <img src={require("./reservations.jpg")} />;
       </div>
     );
   }
