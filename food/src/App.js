@@ -89,14 +89,14 @@ class App extends Component {
 //menu section
 //menu items
 
-const MenuItem = ({ item }) => {
+const MenuItem = ({ price, name }) => {
   return (
     <div className="MenuItem">
       <p>
-        {item.name}
+        {name}
       </p>
       <p>
-        {item.price}
+        {price}
       </p>
     </div>
   );
@@ -108,7 +108,7 @@ const MenuSection = ({ items, name }) => {
       <h2 id={name}>
         {name}
       </h2>
-      {items.map(item => <MenuItem item={item} key={item.name} />)}
+      {items.map(item => <MenuItem {...item} key={item.name} />)}
     </div>
   );
 };
